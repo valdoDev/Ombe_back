@@ -21,10 +21,12 @@
 ## Requisitos
 <p>Estes requisitos básicos são utilizados para ver como você lida com cada um desses itens. A falta de qualquer um desses requisitos compromete a sua avaliação no final.</p>
 
-* NET Core 7 
+* NET Core 5
 * C# 
 * BDD (<a href="https://specflow.org/">Specflow</a>)
 * TDD
+* Validação de Data Objects (<a href="https://docs.fluentvalidation.net/en/latest/">FluentValidation</a>) 
+
 
 ## Importante
 * **Convite:** Caso queira testar aplicação entre em <a href="mailto:oliveirabvaldo@gmail.com">contato</a> solicite um convite.

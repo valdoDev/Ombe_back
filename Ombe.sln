@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.33130.400
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ombe.API", "Ombe.API\Ombe.API.csproj", "{15770FF4-976A-4EBA-9BA1-E428C9511A2D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ombe.API", "Ombe.API\Ombe.API.csproj", "{15770FF4-976A-4EBA-9BA1-E428C9511A2D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ombe.BDD.Tests", "Ombe.BDD.Tests\Ombe.BDD.Tests.csproj", "{C405C799-26E5-4098-B042-461063B5CC10}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ombe.BDD.Tests", "Ombe.BDD.Tests\Ombe.BDD.Tests.csproj", "{C405C799-26E5-4098-B042-461063B5CC10}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ombe.Business", "Ombe.Business\Ombe.Business.csproj", "{10501104-6AF7-482D-8CB5-58E05B29019C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ombe.Data", "Ombe.Data\Ombe.Data.csproj", "{54E4EF33-A845-4BFD-A4D6-44142D0FB379}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{C405C799-26E5-4098-B042-461063B5CC10}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C405C799-26E5-4098-B042-461063B5CC10}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C405C799-26E5-4098-B042-461063B5CC10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10501104-6AF7-482D-8CB5-58E05B29019C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10501104-6AF7-482D-8CB5-58E05B29019C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10501104-6AF7-482D-8CB5-58E05B29019C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10501104-6AF7-482D-8CB5-58E05B29019C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54E4EF33-A845-4BFD-A4D6-44142D0FB379}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54E4EF33-A845-4BFD-A4D6-44142D0FB379}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54E4EF33-A845-4BFD-A4D6-44142D0FB379}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54E4EF33-A845-4BFD-A4D6-44142D0FB379}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
