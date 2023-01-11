@@ -1,13 +1,12 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Ombe.Business.Models
 {
     public class Invite : Entity
     {
+        [StringLength(200)]
         public string Code { get; set; }
         public bool isAvailable { get; set; }
-        public DateTime CreatedAt { get; set; }
-        public DateTime UpdateAt { get; set; }
-        public bool Published { get; set; }
     }
 }
