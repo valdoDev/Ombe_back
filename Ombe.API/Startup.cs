@@ -5,7 +5,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.OpenApi.Models;
 using Ombe.API.Configuration;
 using Ombe.Data.Context;
 
@@ -29,7 +28,7 @@ namespace Ombe.API
             });
 
             services.AddControllers();
-            
+
 
             services.ResolveDependencies();
 
@@ -45,7 +44,7 @@ namespace Ombe.API
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                
+
             }
 
             app.UseHttpsRedirection();
@@ -60,7 +59,7 @@ namespace Ombe.API
             });
 
             //app.UseSwagger();
-           // app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Ombe.API v1"));
+            // app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Ombe.API v1"));
             app.UseSwaggerConfig(provider);
         }
     }

@@ -3,11 +3,6 @@ using FluentValidation.Results;
 using Ombe.Business.Interfaces;
 using Ombe.Business.Models;
 using Ombe.Business.Notifications;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ombe.Business.Services
 {

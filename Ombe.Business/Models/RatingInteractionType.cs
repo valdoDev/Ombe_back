@@ -1,10 +1,13 @@
-﻿using System;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Ombe.Business.Models
 {
     public class RatingInteractionType : Entity
     {
-        public string value { get; set; }
-        public string description { get; set; }
+        [StringLength(10)]
+        public string Value { get; set; }
+
+        [StringLength(200)]
+        public string Description { get; set; }
     }
 }

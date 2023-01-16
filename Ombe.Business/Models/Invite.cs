@@ -1,5 +1,4 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Ombe.Business.Models
 {
@@ -7,6 +6,5 @@ namespace Ombe.Business.Models
     {
         [StringLength(200)]
         public string Code { get; set; }
-        public bool isAvailable { get; set; }
     }
 }

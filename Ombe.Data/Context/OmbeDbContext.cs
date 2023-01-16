@@ -1,16 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Ombe.Business.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ombe.Data.Context
 {
     public class OmbeDbContext : DbContext
     {
-        public OmbeDbContext(DbContextOptions<OmbeDbContext> options) : base(options) {
+        public OmbeDbContext(DbContextOptions<OmbeDbContext> options) : base(options)
+        {
         }
 
         public DbSet<Favorite> Favorites { get; set; }
@@ -24,10 +21,10 @@ namespace Ombe.Data.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-           modelBuilder.Entity<Favorite>()
-                .HasOne<Product>()
-                .WithMany()
-                .HasForeignKey(p => p.IdProduct);
+            modelBuilder.Entity<Favorite>()
+                 .HasOne<Product>()
+                 .WithMany()
+                 .HasForeignKey(p => p.IdProduct);
 
             modelBuilder.Entity<Favorite>()
                 .HasOne<User>()
@@ -63,21 +60,21 @@ namespace Ombe.Data.Context
                .HasOne<RatingInteractionType>()
                .WithMany()
                .HasForeignKey(p => p.IdRatingInteractionType);
-              
-         
-
-
-             modelBuilder.Entity<User>()
-                 .HasOne<Invite>()
-                 .WithMany()
-                 .HasForeignKey(p => p.IdInvite); 
 
 
 
 
-              modelBuilder.Entity<Product>()
-                 .HasMany(b => b.Paterns)
-                 .WithOne();
+            modelBuilder.Entity<User>()
+                .HasOne<Invite>()
+                .WithMany()
+                .HasForeignKey(p => p.IdInvite);
+
+
+
+
+            modelBuilder.Entity<Product>()
+               .HasMany(b => b.Paterns)
+               .WithOne();
 
         }
 

@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Ombe.Business.Interfaces;
-using System.Collections.Generic;
 
 namespace Ombe.API.Controllers
 {
@@ -11,7 +10,7 @@ namespace Ombe.API.Controllers
         public UsersController(INotifier notifier) : base(notifier)
         {
 
-            
+
         }
 
         [HttpGet]

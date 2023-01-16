@@ -1,9 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Ombe.API.Configuration
 {
@@ -17,7 +13,7 @@ namespace Ombe.API.Configuration
                 options.SuppressModelStateInvalidFilter = true;
             });
 
-            services.AddApiVersioning(options => 
+            services.AddApiVersioning(options =>
             {
                 options.AssumeDefaultVersionWhenUnspecified = true;
                 options.DefaultApiVersion = new ApiVersion(1, 0);
