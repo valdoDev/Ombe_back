@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Ombe.Business.Interfaces;
 
 namespace Ombe.API.Controllers
@@ -7,7 +8,7 @@ namespace Ombe.API.Controllers
     [Route("api/v{version:apiVersion}/[controller]")]
     public class UsersController : MainController
     {
-        public UsersController(INotifier notifier) : base(notifier)
+        public UsersController(INotifier notifier, ILogger<UsersController> logger) : base(notifier, logger)
         {
 
 
@@ -16,6 +17,7 @@ namespace Ombe.API.Controllers
         [HttpGet]
         public ActionResult<string> Get()
         {
+            _logger.LogInformation("Request Method get");
             return Ok("");
         }
     }

@@ -30,13 +30,9 @@
 * Injeção de dependência (<a href="https://learn.microsoft.com/pt-br/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-5.0">Dependency injection in ASP.NET Core</a>) 
 * Separação e organização do código (<a href="https://learn.microsoft.com/pt-br/dotnet/csharp/programming-guide/classes-and-structs/extension-methods">Extension Methods</a>) 
 * Versionamento das API's (<a href="https://github.com/dotnet/aspnet-api-versioning/wiki">ASP.NET Versioning</a>) 
-* ORM (<a href="https://learn.microsoft.com/pt-br/ef/core/">Entity Framework Core</a>) 
-
+* ORM (<a href="https://learn.microsoft.com/pt-br/ef/core/">Entity Framework Core 5</a>) 
+* Log (<a href="https://learn.microsoft.com/pt-br/aspnet/core/fundamentals/logging/?view=aspnetcore-5.0">ILogger</a>) 
+* Health Check (<a href="https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/health-checks?view=aspnetcore-5.0">ASP.NET Core Health checks</a>) 
 
 ## Importante
 * **Convite:** Caso queira testar aplicação entre em <a href="mailto:oliveirabvaldo@gmail.com">contato</a> e solicite um convite.
-
-
-
-
-

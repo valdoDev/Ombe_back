@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Ombe.Business.Interfaces;
 
 namespace Ombe.API.Controllers
@@ -7,7 +8,7 @@ namespace Ombe.API.Controllers
     [Route("api/v{version:apiVersion}/[controller]")]
     public class FavoritesController : MainController
     {
-        public FavoritesController(INotifier notifier) : base(notifier)
+        public FavoritesController(INotifier notifier, ILogger<FavoritesController> logger) : base(notifier, logger)
         {
         }
     }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Ombe.Business.Interfaces;
 
 namespace Ombe.API.Controllers
@@ -7,7 +8,7 @@ namespace Ombe.API.Controllers
     [Route("api/v{version:apiVersion}/[controller]")]
     public class InviteController : MainController
     {
-        public InviteController(INotifier notifier) : base(notifier)
+        public InviteController(INotifier notifier, ILogger<InviteController> logger) : base(notifier, logger)
         {
         }
     }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.Extensions.Logging;
 using Ombe.Business.Interfaces;
 using Ombe.Business.Notifications;
 using System.Linq;
@@ -10,10 +11,12 @@ namespace Ombe.API.Controllers
     public class MainController : ControllerBase
     {
         private readonly INotifier _notifier;
+        protected readonly ILogger _logger;
 
-        public MainController(INotifier notifier)
+        public MainController(INotifier notifier, ILogger logger)
         {
             _notifier = notifier;
+            _logger = logger;
         }
 
         protected bool isValidOperator()

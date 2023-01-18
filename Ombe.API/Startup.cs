@@ -1,4 +1,6 @@
+using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.EntityFrameworkCore;
@@ -7,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Ombe.API.Configuration;
 using Ombe.Data.Context;
+using System;
 
 namespace Ombe.API
 {
@@ -29,12 +32,26 @@ namespace Ombe.API
 
             services.AddControllers();
 
-
-            services.ResolveDependencies();
-
             services.WebApiConfig();
 
             services.AddSwaggerConfig();
+
+           
+            var bdTimeout = new TimeSpan(0, 0, 10);
+            services.AddHealthChecks()
+                    .AddCheck("Tabelas acesso", new SqlServerHealthCheck(Configuration.GetConnectionString("DefaultConnection")), timeout: bdTimeout)
+                    .AddSqlServer(Configuration.GetConnectionString("DefaultConnection"), name: "SQL Server", timeout: bdTimeout);
+
+            services.AddHealthChecksUI(opt =>
+                    {
+                        opt.SetEvaluationTimeInSeconds(300); //time in seconds between check    
+                        opt.MaximumHistoryEntriesPerEndpoint(60); //maximum history of checks    
+                    })
+                    .AddInMemoryStorage();
+
+            services.ResolveDependencies();
+
+
 
         }
 
@@ -58,9 +75,20 @@ namespace Ombe.API
                 endpoints.MapControllers();
             });
 
-            //app.UseSwagger();
-            // app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Ombe.API v1"));
             app.UseSwaggerConfig(provider);
+
+            app.UseHealthChecks("/hc-data-ui", new HealthCheckOptions()
+            {
+                Predicate = _ => true,
+                ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse,
+            });
+
+            app.UseHealthChecksUI(options =>
+            {
+                options.UIPath = "/hc-monitor";
+            });
+
+
         }
     }
 }
