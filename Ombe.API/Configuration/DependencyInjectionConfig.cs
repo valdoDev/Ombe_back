@@ -18,6 +18,9 @@ namespace Ombe.API.Configuration
 
             services.AddScoped<INotifier, Notifier>();
 
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IProductRepository, ProductRepository>();
+
 
 
             services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();

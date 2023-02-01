@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Ombe.Business.Models
 {
-    public abstract class Entity
+    public abstract record Entity
     {
         protected Entity()
         {

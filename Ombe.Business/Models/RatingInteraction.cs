@@ -2,7 +2,7 @@
 
 namespace Ombe.Business.Models
 {
-    public class RatingInteraction : Entity
+    public record RatingInteraction : Entity
     {
         public Guid IdRating { get; set; }
         public Guid IdUserInteraction { get; set; }

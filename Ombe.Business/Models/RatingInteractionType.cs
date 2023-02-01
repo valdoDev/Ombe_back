@@ -2,7 +2,7 @@
 
 namespace Ombe.Business.Models
 {
-    public class RatingInteractionType : Entity
+    public record RatingInteractionType : Entity
     {
         [StringLength(10)]
         public string Value { get; set; }

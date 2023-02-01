@@ -9,5 +9,6 @@ namespace Ombe.Business.Interfaces
         Task Adicionar(Favorite favorite);
         Task Atualizar(Favorite favorite);
         Task Remover(Guid id);
+        Task<Favorite> getID(Guid id);
     }
 }

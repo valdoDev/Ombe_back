@@ -1,5 +1,6 @@
 ﻿using Ombe.Business.Interfaces;
 using Ombe.Business.Models;
+using Ombe.Business.Models.Validations;
 using System;
 using System.Threading.Tasks;
 
@@ -15,24 +16,33 @@ namespace Ombe.Business.Services
             _productRepository = productRepository;
         }
 
-        public Task Adicionar(Product produto)
+        public async Task Adicionar(Product produto)
         {
-            throw new NotImplementedException();
+            if (!ExecutarValidacao(new ProductValidation(), produto)) return;
+
+            await _productRepository.Adicionar(produto);
         }
 
-        public Task Atualizar(Product produto)
+        public async Task Atualizar(Product produto)
         {
-            throw new NotImplementedException();
+            if (!ExecutarValidacao(new ProductValidation(), produto)) return;
+
+            await _productRepository.Atualizar(produto);
+        }
+
+        public async Task Remover(Guid id)
+        {
+            await _productRepository.Remover(id);
         }
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            _productRepository?.Dispose();
         }
 
-        public Task Remover(Guid id)
+        public async Task<Product> getID(Guid id)
         {
-            throw new NotImplementedException();
+            return await _productRepository.ObterPorId(id);
         }
     }
 }

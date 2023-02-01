@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Ombe.Business.Models
 {
-    public class Rating : Entity
+    public record Rating : Entity
     {
         public Guid IdProduct { get; set; }
         public Guid IdUser { get; set; }

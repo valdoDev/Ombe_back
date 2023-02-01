@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Ombe.Business.Models
 {
-    public class User : Entity
+    public record User : Entity
     {
         public Guid IdInvite { get; set; }
 
@@ -13,5 +13,7 @@ namespace Ombe.Business.Models
 
         [StringLength(200)]
         public string Email { get; set; }
+        public bool PermissionAdm { get; set; }
+        public bool PermissionAPI { get; set; }
     }
 }

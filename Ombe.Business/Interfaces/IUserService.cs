@@ -9,5 +9,6 @@ namespace Ombe.Business.Interfaces
         Task Adicionar(User user);
         Task Atualizar(User user);
         Task Remover(Guid id);
+        Task<User> getID(Guid id);
     }
 }

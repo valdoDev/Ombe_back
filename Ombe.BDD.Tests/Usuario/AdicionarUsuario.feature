@@ -7,6 +7,8 @@ Cenario: Adicionar usuario com sucesso
 Dado Que um usuario acesse opcao de cadastro
 Quando O usuario inserir informacoes
 E tocar no botao cadastrar
+E informacoes validas
+E codigo convite válido
 Entao O usuario recebera uma mensagem de boas vindas
 
 Cenario: Adicionar usuario com email existente

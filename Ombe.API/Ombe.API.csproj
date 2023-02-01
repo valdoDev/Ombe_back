@@ -21,6 +21,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Ombe.Business\Ombe.Business.csproj" />
     <ProjectReference Include="..\Ombe.Data\Ombe.Data.csproj" />
+    <ProjectReference Include="..\Ombe.Flow\Ombe.Flow.csproj" />
   </ItemGroup>
 
 </Project>

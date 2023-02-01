@@ -9,5 +9,6 @@ namespace Ombe.Business.Interfaces
         Task Adicionar(RatingInteraction ratingInteraction);
         Task Atualizar(RatingInteraction ratingInteraction);
         Task Remover(Guid id);
+        Task<RatingInteraction> getID(Guid id);
     }
 }

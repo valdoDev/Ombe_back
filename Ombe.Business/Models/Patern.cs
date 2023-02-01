@@ -2,7 +2,7 @@
 
 namespace Ombe.Business.Models
 {
-    public class Patern : Entity
+    public record Patern : Entity
     {
         [StringLength(14)]
         public string CNPJ { get; set; }

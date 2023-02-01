@@ -9,5 +9,8 @@ namespace Ombe.Business.Interfaces
         Task Adicionar(Invite invite);
         Task Atualizar(Invite invite);
         Task Remover(Guid id);
+        Task<Invite> getID(Guid id);
+        Task<Invite> getCodeFirst(String code);
+        Task<Boolean> isValid(Guid id);
     }
 }

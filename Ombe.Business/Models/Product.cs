@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Ombe.Business.Models
 {
-    public class Product : Entity
+    public record Product : Entity
     {
         [StringLength(50)]
         public string Title { get; set; }

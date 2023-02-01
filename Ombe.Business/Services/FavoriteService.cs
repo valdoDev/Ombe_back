@@ -20,24 +20,29 @@ namespace Ombe.Business.Services
         {
             if (!ExecutarValidacao(new FavoriteValidation(), favorite)) return;
 
-            //var user = _user.GetUserId();
-
             await _favoriteRepository.Adicionar(favorite);
         }
 
-        public Task Atualizar(Favorite favorite)
+        public async Task Atualizar(Favorite favorite)
         {
-            throw new NotImplementedException();
+            if (!ExecutarValidacao(new FavoriteValidation(), favorite)) return;
+
+            await _favoriteRepository.Atualizar(favorite);
+        }
+
+        public async Task Remover(Guid id)
+        {
+            await _favoriteRepository.Remover(id);
         }
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            _favoriteRepository?.Dispose();
         }
 
-        public Task Remover(Guid id)
+        public async Task<Favorite> getID(Guid id)
         {
-            throw new NotImplementedException();
+            return await _favoriteRepository.ObterPorId(id);
         }
     }
 }

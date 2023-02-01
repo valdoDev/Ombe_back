@@ -10,7 +10,7 @@ namespace Ombe.API.Controllers
     [ApiController]
     public class MainController : ControllerBase
     {
-        private readonly INotifier _notifier;
+        protected readonly INotifier _notifier;
         protected readonly ILogger _logger;
 
         public MainController(INotifier notifier, ILogger logger)

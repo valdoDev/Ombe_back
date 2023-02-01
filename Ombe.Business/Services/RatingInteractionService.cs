@@ -1,5 +1,6 @@
 ﻿using Ombe.Business.Interfaces;
 using Ombe.Business.Models;
+using Ombe.Business.Models.Validations;
 using System;
 using System.Threading.Tasks;
 
@@ -15,24 +16,33 @@ namespace Ombe.Business.Services
             _ratingInteractionRepository = ratingInteractionRepository;
         }
 
-        public Task Adicionar(RatingInteraction ratingInteraction)
+        public async Task Adicionar(RatingInteraction ratingInteraction)
         {
-            throw new NotImplementedException();
+            if (!ExecutarValidacao(new RatingInteractionValidation(), ratingInteraction)) return;
+
+            await _ratingInteractionRepository.Adicionar(ratingInteraction);
         }
 
-        public Task Atualizar(RatingInteraction ratingInteraction)
+        public async Task Atualizar(RatingInteraction ratingInteraction)
         {
-            throw new NotImplementedException();
+            if (!ExecutarValidacao(new RatingInteractionValidation(), ratingInteraction)) return;
+
+            await _ratingInteractionRepository.Atualizar(ratingInteraction);
         }
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            _ratingInteractionRepository?.Dispose();
         }
 
-        public Task Remover(Guid id)
+        public async Task<RatingInteraction> getID(Guid id)
         {
-            throw new NotImplementedException();
+            return await _ratingInteractionRepository.ObterPorId(id);
+        }
+
+        public async Task Remover(Guid id)
+        {
+            await _ratingInteractionRepository.Remover(id);
         }
     }
 }

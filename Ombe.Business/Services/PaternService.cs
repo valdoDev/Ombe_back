@@ -1,5 +1,6 @@
 ﻿using Ombe.Business.Interfaces;
 using Ombe.Business.Models;
+using Ombe.Business.Models.Validations;
 using System;
 using System.Threading.Tasks;
 
@@ -15,24 +16,33 @@ namespace Ombe.Business.Services
             _paternRepository = paternRepository;
         }
 
-        public Task Adicionar(Patern patern)
+        public async Task Adicionar(Patern patern)
         {
-            throw new NotImplementedException();
+            if (!ExecutarValidacao(new PaternValidation(), patern)) return;
+
+            await _paternRepository.Adicionar(patern);
         }
 
-        public Task Atualizar(Patern patern)
+        public async Task Atualizar(Patern patern)
         {
-            throw new NotImplementedException();
+            if (!ExecutarValidacao(new PaternValidation(), patern)) return;
+
+            await _paternRepository.Atualizar(patern);
+        }
+
+        public async Task Remover(Guid id)
+        {
+            await _paternRepository.Remover(id);
         }
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            _paternRepository?.Dispose();
         }
 
-        public Task Remover(Guid id)
+        public async Task<Patern> getID(Guid id)
         {
-            throw new NotImplementedException();
+            return await _paternRepository.ObterPorId(id);
         }
     }
 }

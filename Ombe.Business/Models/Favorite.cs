@@ -2,7 +2,7 @@
 
 namespace Ombe.Business.Models
 {
-    public class Favorite : Entity
+    public record Favorite : Entity
     {
         public Guid IdProduct { get; set; }
         public Guid IdUser { get; set; }

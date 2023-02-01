@@ -1,9 +1,10 @@
-﻿using Ombe.Business.Models;
+﻿using Ombe.Business.Interfaces;
+using Ombe.Business.Models;
 using Ombe.Data.Context;
 
 namespace Ombe.Data.Repository
 {
-    public class RatingRepository : Repository<Rating>
+    public class RatingRepository : Repository<Rating>, IRatingRepository
     {
         public RatingRepository(OmbeDbContext db) : base(db)
         {

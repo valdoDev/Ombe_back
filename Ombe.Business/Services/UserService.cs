@@ -1,5 +1,6 @@
 ﻿using Ombe.Business.Interfaces;
 using Ombe.Business.Models;
+using Ombe.Business.Models.Validations;
 using System;
 using System.Threading.Tasks;
 
@@ -15,24 +16,33 @@ namespace Ombe.Business.Services
             _userRepository = userRepository;
         }
 
-        public Task Adicionar(User user)
+        public async Task Adicionar(User user)
         {
-            throw new NotImplementedException();
+            if (!ExecutarValidacao(new UserValidation(), user)) return;
+
+            await _userRepository.Adicionar(user);
         }
 
-        public Task Atualizar(User user)
+        public async Task Atualizar(User user)
         {
-            throw new NotImplementedException();
+            if (!ExecutarValidacao(new UserValidation(), user)) return;
+
+            await _userRepository.Atualizar(user);
+        }
+
+        public async Task<User> getID(Guid id)
+        {
+            return await _userRepository.ObterPorId(id);
+        }
+
+        public async Task Remover(Guid id)
+        {
+            await _userRepository.Remover(id);
         }
 
         public void Dispose()
         {
-            throw new NotImplementedException();
-        }
-
-        public Task Remover(Guid id)
-        {
-            throw new NotImplementedException();
+            _userRepository?.Dispose();
         }
     }
 }

@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ombe.API", "Ombe.API\Ombe.A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ombe.BDD.Tests", "Ombe.BDD.Tests\Ombe.BDD.Tests.csproj", "{C405C799-26E5-4098-B042-461063B5CC10}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ombe.Business", "Ombe.Business\Ombe.Business.csproj", "{10501104-6AF7-482D-8CB5-58E05B29019C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ombe.Business", "Ombe.Business\Ombe.Business.csproj", "{10501104-6AF7-482D-8CB5-58E05B29019C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ombe.Data", "Ombe.Data\Ombe.Data.csproj", "{54E4EF33-A845-4BFD-A4D6-44142D0FB379}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ombe.Data", "Ombe.Data\Ombe.Data.csproj", "{54E4EF33-A845-4BFD-A4D6-44142D0FB379}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ombe.Flow", "Ombe.Flow\Ombe.Flow.csproj", "{E13C1A64-9D77-41A4-A5DA-E61FCA63189E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{54E4EF33-A845-4BFD-A4D6-44142D0FB379}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54E4EF33-A845-4BFD-A4D6-44142D0FB379}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54E4EF33-A845-4BFD-A4D6-44142D0FB379}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E13C1A64-9D77-41A4-A5DA-E61FCA63189E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E13C1A64-9D77-41A4-A5DA-E61FCA63189E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E13C1A64-9D77-41A4-A5DA-E61FCA63189E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E13C1A64-9D77-41A4-A5DA-E61FCA63189E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
